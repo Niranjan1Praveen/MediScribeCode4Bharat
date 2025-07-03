@@ -1,133 +1,155 @@
-# 🏥 MediScribe – AI-Powered Multi-Agent Clinical Assistant
+# MediScribe – Generative AI-Powered Clinical Documentation & Assistant WebApp
 
-## 🚀 Overview
-**MediScribe** is a powerful tool designed specifically for doctors and clinicians. It is an AI-first, multi-agent task automation platform that transforms natural language doctor–patient interactions into structured clinical workflows. Developed under the **OmniDimension Challenge** for **CODECLASH 2.0**, MediScribe leverages a network of intelligent agents to decompose, plan, and execute healthcare-related tasks — including real-time transcription, personalized recommendations, appointment scheduling, and calendar updates — with minimal user input.
+**Hackathon:** Code For Bharat – Season 2  
+**Team Name:** CODE4CHANGE  
+**Team Members:**  
+- Niranjan Praveen (Team Leader)   
+- Abhishek Chaubhey  
+- Vaibhav Jain  
+- Debshata Choudhury   
 
-## 🔍 Problem Statement Alignment
-> **CODECLASH 2.0 – OmniDimension Track – Multi-Agent Task Automation System (Problem Statement 1)**
+📧 **Contact:** heckerhecker86@gmail.com 
+🔗 **Live Demo:** [https://medi-scribe-pi.vercel.app/](https://medi-scribe-pi.vercel.app/)
 
-- Natural language task description
-- Multi-agent orchestration
-- Real-time execution (calls, calendar, reminders)
-- External API integration (EMR, FHIR, Calendar, Telephony)
+---
 
-MediScribe interprets voice commands like:
-> _"Schedule an appointment for stomach ache, suggest diet, generate prescription, and remind me next week."_
+## 🚀 Problem Statement:
+**Automated Clinical Documentation using Generative AI:**  
+Leverage voice recognition and large language models (LLMs) to automatically transcribe, interpret, and generate structured, review-ready clinical notes and personalized treatment plans.
 
-...and automatically activates a coordinated sequence of agents to deliver a seamless healthcare experience.
+---
+
+## 🧠 Overview of MediScribe
+
+**MediScribe** is a full-stack SaaS platform that integrates real-time **Generative AI** and **LLM-driven intelligence** to automate doctor–patient consultations. It transforms audio inputs into structured medical documents, prescriptions, and personalized wellness plans—all in real time.
+
+Powered by **Gemini LLM APIs**, MediScribe bridges the gap between healthcare efficiency and human-centered care using:
+
+- 🎙️ Voice-to-Text Transcription  
+- 🧾 Clinical Note Structuring  
+- 💊 Digital Prescription Generation  
+- 🍎 Personalized Diet & Exercise Plans  
+- 🔐 Role-Based Multi-User Access
+
+---
+
+## 🧩 Core Features (LLM-Powered)
+
+- **🎤 Real-time Voice Transcription + NLP:**  
+  Uses Gemini Speech-to-Text + LLMs to convert bilingual (Hindi & English) doctor-patient conversations into structured notes.
+
+- **🧠 Generative Clinical Notes:**  
+  Extracts and formats chief complaints, history, diagnosis, and treatments using a custom pipeline powered by LLM + MedSpaCy.
+
+- **📄 Digital Prescription Generator:**  
+  Auto-generates editable, signed prescriptions in PDF format with clinical context from AI output.
+
+- **🍱 Personalized Health Plans:**  
+  AI-generated diet & fitness recommendations based on LLM-analyzed vitals, conditions, and preferences.
+
+- **🧑‍⚕️ Doctor/Admin Dashboards:**  
+  Clean review and approval interfaces for clinicians to verify AI-generated outputs.
+
+- **💳 Stripe-Powered Subscription Billing:**  
+  Tiered pricing for clinics/hospitals with role-based access and audit trail.
+
+- **📡 EMR Interoperability (FHIR API):**  
+  Seamless integration with electronic medical record systems.
 
 ---
 
 ![Landing Page Preview](./designs/landingPage.png)  
 ![Documentation Preview](./designs/documentation.png)  
-![OmniDimensionAgent Preview](./designs/OmniDimensionAgent.png)  
 ![Live Conversation Preview](./designs/liveConversation.png)  
 ![Digi Prescription Preview](./designs/digiPrescription.png)  
 ![Fitness Generator Preview](./designs/fitnessGenerator.png)
 ![Search Prescription Preview](./designs/searchPrescription.png)
 
-## ⚙️ Multi-Agent System Architecture
+---
 
-| 🧠 Agent | Role |
-|---------|------|
-| **Transcription Agent** | Captures voice and converts to structured medical text |
-| **NLP/Analysis Agent** | Extracts clinical information: symptoms, history, diagnosis |
-| **Health Insight Agent** | Generates diet plans, prescriptions, and fitness suggestions |
-| **Scheduling Agent** | Finds providers and books appointments |
-| **Reminder Agent** | Adds follow-up tasks to user's calendar |
-| **Monitoring Agent** | Continuously checks for better slots, alerts missed updates |
+## Key Features Include:
+
+- **Voice Transcription & NLP** – Real-time doctor–patient conversation capture in two languages and structured note extraction via Gemini Speech-to-Text and NLP models.  
+- **Digital Prescription Generator** – Create, edit, and download prescriptions with digital signature support.  
+- **Diet & Exercise Recommendation Engine** – AI-driven, personalized health plans based on patient data.  
+- **Clinician Review Interface** – Intuitive dashboard for review, editing, and approval of AI outputs.  
+- **Subscription Management** – Stripe-powered tiered SaaS billing and access control.  
+- **EMR Integration** – Optional FHIR API connectivity for seamless data exchange.  
+- **Multi-User Roles**:
+  - *Doctor* – Conduct consultations and finalize notes.  
+  - *Assistant* – Manage audio uploads and preliminary reviews.  
 
 ---
 
-## 🧑‍💻 Technologies Used
+## AI & Cloud Integration (Simplified Overview)
 
-- **Frontend**: Next.js, Tailwind CSS, ShadCN UI
-- **Backend**: Python (FastAPI + Flask)
-- **AI/NLP**:
-  - OmniDimension agent orchestration framework (for coordination and execution)
-  - Gemini API (for transcription and language understanding)
-  - MedSpaCy for clinical NLP
-- **Database**: PostgreSQL (via Supabase/Prisma)
-- **APIs**:
-  - Calendar (Google/Microsoft)
-  - Telephony (Twilio integration ready)
-  - FHIR for EMR compatibility
-- **Deployment**: Vercel (frontend), Render (backend)
+### Gemini Speech-to-Text Pipeline
+- Capture live audio via WebRTC.  
+- Stream to **Gemini Speech-to-Text API** for low-latency transcription.  
 
----
+### Gemini API NLP Extraction
+- Parse transcripts into **chief complaints**, **history**, **diagnosis**, and **treatment** sections.  
+- Extract critical clinical entities using MedSpaCy.
 
-## 🌐 Live Demo
-🎯 [MediScribe WebApp](https://medi-scribe-pi.vercel.app/)
+## Technology Stack:
+
+- **Frontend**: Next.js, Tailwind CSS, ShadCN UI, KindeAuth  
+- **Backend**: FastAPI, Flask (Python), Qiskit (for future quantum-powered analytics)  
+- **AI/ML**: Gemini API, Scikit-learn  
+- **Database**: PostgreSQL (via Prisma/Supabase)  
+- **Deployment**: Vercel (frontend), Render (backend)  
 
 ---
 
-## 📦 Features
+## Code Execution Instructions:
 
-✅ **Voice Transcription** – Real-time capture and multilingual support  
-✅ **Smart Clinical Notes** – Structured SOAP format generated by NLP agents  
-✅ **Digital Prescriptions** – Auto-generated, editable, and downloadable  
-✅ **Diet & Exercise Plans** – Personalized based on extracted symptoms and profile  
-✅ **Smart Scheduling** – Appointments booked using user context and preferences  
-✅ **Reminders & Monitoring** – Follow-ups, medication alerts, and re-checks  
-✅ **Role-Based Access** – Separate dashboards for Doctors, Assistants, Patients  
-
----
-
-## 🧱 Installation & Local Setup
-
+### 1. Clone the Repository  
 ```bash
-# 1. Clone the Repository
-$ git clone https://github.com/YourOrg/medi-scribe.git
-$ cd medi-scribe
-
-# 2. Install Frontend Dependencies
-$ cd client
-$ npm install
-
-# 3. Install Backend Dependencies
-$ cd ../server
-$ pip install -r requirements.txt
-
-# 4. Run Dev Servers
-# Frontend (Next.js)
-$ cd client
-$ npm run dev
-
-# Backend (FastAPI/Flask)
-$ cd ../server
-$ python app.py
-
-# 5. Access Application
-Visit http://localhost:3000
+git clone https://github.com/YourOrg/medi-scribe.git
+cd medi-scribe
 ```
 
+### 2. Install Frontend Dependencies  
+```bash
+cd client
+npm install
+```
+
+### 3. Install Backend Dependencies  
+```bash
+cd ../server
+pip install -r requirements.txt
+```
+
+### 4. Start Development Servers  
+
+#### Frontend (Next.js)  
+```bash
+cd client
+npm run dev
+```
+
+#### Backend (FastAPI/Flask)  
+```bash
+cd ../server
+python app.py
+```
+
+### 5. Access the Application  
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
 ---
 
-## 📈 Scalability & Business Model
-- **SaaS Subscription Model**: Tiered pricing for clinics, hospitals, and solo practitioners
-- **Enterprise EMR Integration**: FHIR-compliant data exchange
-- **Security**: HIPAA/GDPR-ready, OAuth2.0 authentication
-- **Mobile App Roadmap**: Upcoming support for iOS and Android
-- **Affordable Tiers**: Free for basic users, pay-as-you-grow options
+## Scalability & Business Model:
+
+- **Subscription Model**: Tiered pricing per clinic, with volume discounts.  
+- **Enterprise Integrations**: EMR interoperability for hospitals and chains.  
+- **Security & Compliance**: HIPAA/GDPR-ready encryption, role-based access controls.  
+- **Modular Architecture**: Easy feature rollout (mobile app, multilingual, analytics).  
+- **Affordability**: Pay-as-you-grow pricing, free basic tier for small practices.
 
 ---
 
-## 🤝 Team CODE4CHANGE
-- **Vaibhav Jain** *(Team Leader)* – vaibavjain62@gmail.com
-- Niranjan Praveen  
-- Abhishek Chaubey  
-- Debshata Choudhury 
+## Summary
 
----
-
-## 📌 Acknowledgments
-- **Gemini API** for powerful transcription and NLP assistance (used as an internal module).
-- **FHIR Standard** for EMR interoperability.
-- **CODECLASH 2.0 OmniDimension Challenge** for providing the platform to build impactful healthcare automation solutions.
-
----
-
-## 💡 Summary
-> **MediScribe** bridges the gap between doctor-patient communication and actionable care by orchestrating a network of intelligent agents. Designed for OmniDimension, it transcends traditional AI tools by embracing dynamic, coordinated, and real-time execution of healthcare workflows — empowering clinicians to focus on what matters most: delivering better care.
-
-📌 _“From voice to care — intelligently automated.”_
+MediScribe transforms clinical documentation with an **AI-first approach**, combining real-time transcription, structured note extraction via **Gemini API**, and personalized health recommendations into a seamless SaaS platform—empowering clinicians to **reduce administrative overhead**, **improve patient engagement**, and **enhance care quality** in any healthcare setting.
